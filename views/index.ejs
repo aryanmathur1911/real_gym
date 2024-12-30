@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GYMNIE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <style>
+      body {
+        margin: 0px;
+        background: url("images/fitness-1882721_1280.jpg");
+        background-size: 100%;
+        /* height: 1111px; */
+      }
+
+      .left {
+        /* border: 3px solid red; */
+        display: inline-block;
+        position: absolute;
+        left: 20px;
+        top: 2px;
+        margin-top: 5px;
+      }
+      .center {
+        display: block;
+        width: 33%;
+        /* border: 3px solid red; */
+        margin: auto;
+        margin-top: 5px;
+      }
+      .right {
+        /* border: 3px solid goldenrod; */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 2px;
+        top: 1px;
+        margin-top: 5px;
+      }
+      ul {
+        list-style-type: none;
+
+        padding: 0px;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      .navbar {
+        display: inline-block;
+        margin: 0px 20px 0px 15px;
+        background-color: black;
+        border-radius: 28px;
+        /* border: 2px solid white; */
+      }
+      .navbar li {
+        display: inline-grid;
+      }
+      /* li{
+        display: inline-block;
+        font-size: 20px;
+       } */
+      a {
+        color: whitesmoke;
+        margin: 0px 5px 0px 4px;
+        padding: 10px 7px 10px 7px;
+        font-size: medium;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+      button {
+        display: block;
+        width: 100%;
+        margin-bottom: 7px;
+        background-color: rgb(117, 115, 115);
+        color: aliceblue;
+        border-radius: 50px;
+      }
+      button:hover {
+        background-color: blueviolet;
+        cursor: pointer;
+      }
+
+      
+      .btn1:hover {
+        background-color: blueviolet;
+        color: azure;
+      }
+      .btn2:hover {
+        background-color: blueviolet;
+        color: azure;
+      }
+      .btn3:hover {
+        background-color: blueviolet;
+        color: azure;
+      }
+      .left img {
+        width: 110px;
+        height: 110px;
+      }
+      .container {
+        /* border: 3px solid purple; */
+        background-color: black;
+        color: whitesmoke;
+        margin: 112px 30px 5px 50px;
+        display: block;
+        width: 291px;
+        height: 291px;
+      }
+      .dropdown {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+      }
+
+      /* Hidden dropdown content (the menu) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        background-color: black;
+        min-width: 100px;
+        width: auto;
+        max-width: 100%;
+        color: white;
+        padding: 0;
+        margin: 0;
+        width: 100px;
+        grid-template-columns: 1fr;
+      }
+
+      /* Show the dropdown content when the parent is hovered */
+      .dropdown:hover .dropdown-content {
+        display: grid;
+        grid-gap: 0px;
+        grid-auto-flow: row;
+      }
+
+      .form {
+        text-align: center;
+        margin: 62px 4px 5px 6px;
+      }
+      input {
+        width: 100%;
+        border-radius: 40px;
+        padding: 4px;
+        margin-bottom: 7px;
+      }
+      .form-content {
+        margin: 8px 11px 5px -3px;
+      }
+      .sub2 {
+        display: block;
+        width: 150px;
+        text-align: center;
+        margin: auto;
+      }
+      h4 {
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+      }
+      nav {
+        display: flex;
+        flex-direction: row;
+      }
+      .dropdown-content > ul {
+        display: flex;
+        flex-direction: row;
+      }
+      li {
+        position: relative;
+      }
+      .already {
+        color: rgb(36, 36, 213);
+        margin-top: 4px;
+      }
+      .admin-button {
+        color: rgb(36, 36, 213);
+        margin-top: 4px;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      /* Modal content */
+      .modal-content {
+        background-color: black;
+        color: aliceblue;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        width: 60%;
+        height: 55%;
+        max-width: 1000px;
+        max-height: 1000px;
+
+        text-align: center;
+      }
+
+      /* Close button */
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .close.top-right {
+        right: 20px;
+      }
+      .close.top-left {
+        left: 20px;
+      }
+      #openModal {
+        background-color: black;
+        border: none;
+      }
+
+      #openModal:hover {
+        text-decoration : underline;
+      }
+      .btn1,.btn2,.btn3{
+        background-color: beige;
+        color: rgba(0, 0, 0, 0.986);
+        border: 3px solid black ;
+        border-radius: 8px
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <!-- for logo -->
+      <div class="left">
+        <img src="./images/man-7328236_1280.png" alt="" />
+      </div>
+      <!-- for navbar -->
+      <div class="center">
+        <div class="navbar">
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li>
+                <button id="openModal">aboutus</button>
+                <div id="modal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Sed eligendi voluptas exercitationem officia!
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li><a href="#">Check your fitness </a></li>
+
+              <li class="dropdown">
+                <a href="#">Contact Us </a>
+
+                <ul class="dropdown-content">
+                  <li class="dropdown-value"><a href="#">email</a></li>
+                  <li class="dropdown-value"><a href="#">on web</a></li>
+                  <li class="dropdown-value"><a href="#">on centre</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- for buttons -->
+      <div class="right">
+        <a class="btn1" href="">Check membership plans</a>
+        <a class="btn2" href="">share wih us</a>
+        <a class="btn3" href="">Apply as instructor</a>
+        
+      </div>
+
+      <div class="container">
+        <form action="/register/register" method="post" class="form">
+          <h4>JOIN THE BEST GYM IN SIKAR</h4>
+          <div class="form-content">
+            <input type="text" placeholder="NAME" name="name" />
+            <input type="text" placeholder="AGE" name="age" />
+            <input type="email" placeholder="email" name="email" />
+            <input type="password" placeholder="password" name="password" />
+            <input type="text" placeholder="WEIGHT" name="weight" />
+            <button class="sub2" type="submit">submit</button>
+          </div>
+
+          <a class="already" href="/login/user-login"
+            >Already a registered user?</a
+          >
+          <br />
+          <a class="admin-button" href="/admin/admin-login">admin?</a>
+        </form>
+      </div>
+
+      <script src="../javascripts/script.js"></script>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="bg-[url(../images/pexels-veganliftz-2377165.jpg)] bg-no-repeat bg-cover w-full h-screen"
+    >
+      <h1 class="text-3xl mb-2 italic p-2">Enter dietchart</h1>
+      <hr />
+      <form
+        action="/dietchart/create-dietchart"
+        method="Post"
+        class="mt-2 p-3 flex flex-col gap-3 w-1/3 justify-center"
+      >
+        <div>
+          <input
+            type="number"
+            placeholder="minimum-weight"
+            class="p-2 rounded-lg border-black border-3"
+            name="minweight"
+          />
+          <input
+            type="number"
+            placeholder="maximum-weight"
+            class="p-2 rounded-lg border-black border-3"
+            name="maxweight"
+          />
+        </div>
+
+        <textarea
+          type="text"
+          placeholder="purpose"
+          class="p-2 rounded-lg border-black border-3 m-2 resize-none"
+          name="purpose"
+        ></textarea>
+        <textarea
+          type="text"
+          placeholder="breakfast"
+          class="p-2 rounded-lg border-black border-3 m-2 resize-none"
+          name="breakfast"
+        ></textarea>
+        <textarea
+          type="text"
+          placeholder="lunch"
+          class="p-2 rounded-lg border-black border-3 m-2 resize-none"
+          name="lunch"
+        ></textarea>
+        <textarea
+          type="text"
+          placeholder="dinner"
+          class="p-2 rounded-lg border-black border-3 m-2 resize-none"
+          name="dinner"
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-blue-700 p-2 w-1/4 tracking-tighter rounded-lg"
+        >
+          Create Dietchart
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

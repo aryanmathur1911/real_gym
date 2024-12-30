@@ -1,0 +1,45 @@
+
+  "_id": {
+    "$oid": "675e87f928ee1f5498fc5330"
+  },
+  "weightRange": {
+    "min": 60,
+    "max": 70
+  },
+  "chartDetails": [
+    {
+      "purpose": "Diet chart Weight Maintenance",
+      "meals": [
+        {
+          "time": "Breakfast",
+          "meal": "Oats with milk and fruits"
+        },
+        {
+          "time": "Lunch",
+          "meal": "Grilled chicken with veggies"
+        },
+        {
+          "time": "Dinner",
+          "meal": "Salad with quinoa"
+        }
+      ]
+    },
+    {
+      "purpose": "Diet chart for Stamina",
+      "meals": [
+        {
+          "time": "Breakfast",
+          "meal": "Oats with milk and fruits"
+        },
+        {
+          "time": "Lunch",
+          "meal": "Grilled chicken with veggies"
+        },
+        {
+          "time": "Dinner",
+          "meal": "Salad with quinoa"
+        }
+      ]
+    }
+  ]
+}

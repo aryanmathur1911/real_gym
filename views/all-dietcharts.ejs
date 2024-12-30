@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Diet Chart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg- bg-[url(/images/jot-153411_1280.png)] bg-no-repeat bg-cover p-5"
+  >
+    <div
+      class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6 bg-opacity-10"
+    >
+      <% allDietCharts.forEach(dietChart => { %>
+      <div class="border-2 border-black mb-3 rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">
+          Diet Chart for Weight Range:
+          <span class="text-blue-600"><%= dietChart.weightRange.min %> kg</span>
+          -
+          <span class="text-blue-600"><%= dietChart.weightRange.max %> kg</span>
+        </h2>
+
+        <div class="space-y-4">
+          <div class="grid grid-cols-3 gap-x-6 p-4 rounded-lg shadow-inner">
+            <% dietChart.chartDetails.forEach(chartDetail => { %>
+            <div class="bg-gray-200 p-4 rounded-lg">
+              <!-- Purpose -->
+              <div>
+                <h3 class="text-2xl font-semibold text-gray-700 mb-3 italic">
+                  <%= chartDetail.purpose %>
+                </h3>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-medium text-gray-600 mb-3">Meals:</h4>
+              </div>
+
+              <div>
+                <ul class="space-y-2">
+                  <% chartDetail.meals.forEach(meal => { %>
+                  <li
+                    class="flex-col justify-between items-center p-2 bg-gray-100 rounded-lg"
+                  >
+                    <div>
+                      <strong class="text-gray-700 capitalize block"
+                        ><%= meal.time %>:</strong
+                      >
+                    </div>
+                    <div class="text-gray-600"><%= meal.meal %></div>
+                  </li>
+                  <% }) %>
+                </ul>
+              </div>
+              <!-- </div> -->
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <div class="text-center mt-4 bg-gray-100 bg-opacity-30">
+      <a href="/admin/adminPage" class="text-blue-900 hover:underline text-lg">
+        Back to admin's office
+      </a>
+    </div>
+  </body>
+</html>

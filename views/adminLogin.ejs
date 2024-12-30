@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this is admin.ejs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="bg-zinc-900 w-full h-screen bg-[url(https://cdn.pixabay.com/photo/2013/07/13/13/38/man-161282_960_720.png)]  bg-no-repeat bg-cover">
+        <h1 class="text-3xl text-center text-black bg-zinc-200 p-2 rounded-lg">Sign in</h1>
+      <!-- <hr /> -->
+      <div class="flex justify-center mt-3">
+        <form
+          action="/admin/admin-login"
+          method="post"
+          class="flex flex-col gap-3 mt-4 w-1/3 h-1/3 flex-wrap bg-zinc-900 p-3 rounded-lg "
+        >
+          <input type="text" value="" placeholder="admin's username" name="username" class="rounded-lg border-3 border-white p-2 placeholder:text-black"/>
+          <input type="password" value="" placeholder="admin's password" name="password" class="rounded-lg border-3 border-white p-2 placeholder:text-black"/>
+          <button type="submit"class="bg-blue-700 p-1 rounded-lg w-1/4 m-auto  tracking-tighter" >Login as admin</button>
+        </form>
+    </div>
+</body>
+</html>
